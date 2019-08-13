@@ -1,27 +1,28 @@
 import React from "react";
 import "./App.css";
+import styled from "styled-components";
+import Cards from "./UI/Containers/Cards/Cards";
+import Layout from "./UI/Layouts/Layout";
+import { Switch, Route, Redirect } from "react-router";
 
-import Card from "./UI/Containers/Card/Card";
-import Store from "./api/temp";
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+`;
 
 const App: React.FC = () => {
-  const cardsRender = () => {
-    return Store.Cards.map(c => {
-      return (
-        <div>
-          <Card title={c.title} counter={c.counter} color={c.color} />
-        </div>
-      );
-    });
-  };
-
   return (
     <div className="App">
-      <h1>Hello!!!</h1>
-      <div className="wrapper">
-        {cardsRender()}
-        {console.log("hollo")}
-      </div>
+      <Layout>
+        <Switch>
+          <Route path="/" exact component={Cards} />
+          <Route path="/about" component={() => <h1>About</h1>} />
+          <Redirect to="/" />
+        </Switch>
+      </Layout>
     </div>
   );
 };

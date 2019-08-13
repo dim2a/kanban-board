@@ -4,34 +4,20 @@ body {
   background-color: #202146;
 }
 
+div,
+p,
+form,
+input,
+textarea,
+a,
+span,
+button {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
 h4 {
   color: #fff;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 800px;
-  margin: 0 auto;
-}
-
-.toDo {
-  width: 30%;
-  background-color: #597bfc;
-  height: 200px;
-}
-
-.inWork {
-  width: 30%;
-  background-color: #ffac2c;
-  height: 200px;
-}
-
-.done {
-  width: 30%;
-  background-color: #00cc6f;
-  height: 200px;
 }

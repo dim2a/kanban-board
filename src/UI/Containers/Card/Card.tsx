@@ -8,18 +8,21 @@ export interface CardComponentProps {
 }
 
 const CardColor = styled.div`
-  width: 30%;
+  width: 250px;
   background-color: ${props => props.color};
-  height: 200px;
+  min-height: 200px;
+  display: flex;
+  padding: 10px;
 }
+`;
+const Title = styled.h3`
+  margin: 0 auto;
 `;
 
 const Card: React.FC<CardComponentProps> = props => {
-  console.log("props", props.color);
   return (
     <CardColor color={props.color}>
-      <h3>{props.title}</h3>
-      <p>{props.counter}</p>
+      <Title>{`${props.title}: ${props.counter}`}</Title>
     </CardColor>
   );
 };
